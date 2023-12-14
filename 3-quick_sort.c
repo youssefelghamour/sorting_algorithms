@@ -19,7 +19,6 @@ int lomuto(int *array, int low, int up)
 			array[i] = array[j];
 			array[j] = temp;
 			j++;
-			print_array(array, up + 1);
 		}
 	}
 	temp = array[up];
@@ -39,11 +38,12 @@ void sorting(int *array, int low, int up)
 {
 	int p;
 
-	if (low >= up)
+	if (low >= up || low < 0)
 		return;
 	p = lomuto(array, low, up);
 	sorting(array, low, p - 1);
 	sorting(array, p + 1, up);
+	print_array(array, up + 1);
 }
 
 /**
