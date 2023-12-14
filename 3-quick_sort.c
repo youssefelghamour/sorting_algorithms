@@ -1,5 +1,12 @@
 #include "sort.h"
 
+/**
+ * lomuto - uses lomuto partition scheme to divide the array
+ * @array: array to be sorted
+ * @low: lower bound of the array
+ * @up: upper bound of the array
+ * Return: Nothing
+ */
 int lomuto(int *array, int low, int up)
 {
 	int pivot = array[up], i, j = low, temp;
@@ -21,6 +28,13 @@ int lomuto(int *array, int low, int up)
 	return (j);
 }
 
+/**
+ * sorting - sort the partitioned parts of the array
+ * @array: array to be sorted
+ * @low: lower bound of the array
+ * @up: upper bound of the array
+ * Return: Nothing
+ */
 void sorting(int *array, int low, int up)
 {
 	int p;
@@ -32,6 +46,12 @@ void sorting(int *array, int low, int up)
 	sorting(array, p + 1, up);
 }
 
+/**
+ * quick_sort - sorts an array of integers using the Quick sort algorithm
+ * @array: array to be sorted
+ * @size: size of the array
+ * Return: Nothing
+ */
 void quick_sort(int *array, size_t size)
 {
 	if (size < 2)
