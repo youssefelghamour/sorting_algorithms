@@ -1,12 +1,12 @@
 # 0x1B. C - Sorting algorithms & Big O
 
-This project is meant to be done by groups of two students and involves sorting algorithms and Big O Notation.
+This repository contains the collaborative work of a group project undertaken by two students, Mahmoud Hammam and Youssef El Ghamour, as part of the ALX Software Engineering program. The project focuses on implementing various sorting algorithms and understanding their time complexities, emphasizing hands-on learning and practical application of the concepts taught in the program.
 
 ## Objectives
-- Implement different sorting algorithms
-- Understand Big O notation and evaluate the time complexity of an algorithm
-- Select the best sorting algorithm for a given input
-- Recognize stable sorting algorithms
+- Implementing different sorting algorithms
+- Understanding Big O notation and evaluating the time complexity of an algorithm
+- Selecting the best sorting algorithm for a given input
+- Recognizing stable sorting algorithms
 
 ## Files
 All programs are written in C:
@@ -21,3 +21,4 @@ All programs are written in C:
 | `2-O` | Big O Notations for Selection sort (best, average, worst cases) |
 | `3-quick_sort.c` | Sorts an array using **Quick sort** |
 | `3-O` | Big O Notations for Quick sort (best, average, worst cases) |
+| `100-shell_sort.c` | Sorts an array using **Shell sort** with Knuth sequence |
