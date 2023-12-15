@@ -29,10 +29,13 @@ int lomuto(int *array, int low, int up, size_t size)
 
 	for (i = low; i < up; i++)
 	{
-		if (array[i] <= pivot)
+		if (array[i] < pivot)
 		{
-			swap(array, i, j);
-			print_array(array, size);
+			if (j < i)
+			{
+				swap(array, i, j);
+				print_array(array, size);
+			}
 			j++;
 		}
 	}
