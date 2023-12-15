@@ -2,17 +2,18 @@
 
 /**
  * swap -  swap two elements of the array
+ * @array: array to swap its elements
  * @x: first element
  * @y: second element
  * Return: Nothing
  */
-void swap(int *x, int *y)
+void swap(int *array, int x, int y)
 {
 	int temp;
 
-	temp = *x;
-	*x = *y;
-	*y = temp;
+	temp = array[x];
+	array[x] = array[y];
+	array[y] = temp;
 }
 /**
  * lomuto - uses lomuto partition scheme to divide the array
@@ -32,7 +33,7 @@ int lomuto(int *array, int low, int up, size_t size)
 		{
 			if (j < i)
 			{
-				swap(array + i, array + j);
+				swap(array, i, j);
 				print_array(array, size);
 			}
 			j++;
@@ -40,7 +41,7 @@ int lomuto(int *array, int low, int up, size_t size)
 	}
 	if (array[j] > pivot)
 	{
-		swap(array + up, array + j);
+		swap(array, up, j);
 		print_array(array, size);
 	}
 	return (j);
