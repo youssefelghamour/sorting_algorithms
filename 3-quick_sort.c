@@ -24,11 +24,11 @@ void swap(int *x, int *y)
  */
 int lomuto(int *array, int low, int up, size_t size)
 {
-	int *pivot = array + up, i, j = low;
+	int pivot = array[up], i, j = low;
 
 	for (i = low; i < up; i++)
 	{
-		if (array[i] < *pivot)
+		if (array[i] < pivot)
 		{
 			if (j < i)
 			{
@@ -38,7 +38,7 @@ int lomuto(int *array, int low, int up, size_t size)
 			j++;
 		}
 	}
-	if (array[j] > *pivot)
+	if (array[j] > pivot)
 	{
 		swap(array + up, array + j);
 		print_array(array, size);
