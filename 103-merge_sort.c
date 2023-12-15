@@ -1,43 +1,25 @@
 #include "sort.h"
 
 /**
- * print_merge - prints the two left and right sub-arrays and
- *		 the result after merging them
+ * print_merge - prints the subarray during the merge process
  *
- * @array: original array after merging
- * @lb: lower bound
- * @mid: the middle of the merged segment
- * @ub: upper bound
+ * @msg: message indicating the purpose of the printed subarray
+ * @array: the array or subarray to print
+ * @from: The starting index of the subarray
+ * @to: The ending index of the subarray
  */
-void print_merge(int *array, int lb, int mid, int ub)
+void print_merge(char *msg, int *array, int from, int to)
 {
+	char *sep;
 	int i;
 
-	printf("Merging...\n");
-	printf("[left]: ");
-	for (i = lb; i <= mid; i++)
-	{
-		if (i > lb)
-			printf(", ");
-		printf("%d", array[i]);
-	}
-	printf("\n");
+	printf("[%s]: ", msg);
+	sep = "";
 
-	printf("[right]: ");
-	for (i = mid + 1; i <= ub; i++)
+	for (i = from; i <= to; i++)
 	{
-		if (i > mid + 1)
-			printf(", ");
-		printf("%d", array[i]);
-	}
-	printf("\n");
-
-	printf("[Done]: ");
-	for (i = lb; i <= ub; i++)
-	{
-		if (i > lb)
-			printf(", ");
-		printf("%d", array[i]);
+		printf("%s%d", sep, array[i]);
+		sep = ", ";
 	}
 	printf("\n");
 }
@@ -55,6 +37,10 @@ void print_merge(int *array, int lb, int mid, int ub)
 void merge(int *array, int lb, int mid, int ub, int *b)
 {
 	int i = lb, j = mid + 1, k = lb;
+
+	printf("Merging...\n");
+	print_merge("left", array, lb, mid);
+	print_merge("right", array, mid + 1, ub);
 
 	while (i <= mid && j <= ub)
 	{
@@ -88,7 +74,7 @@ void merge(int *array, int lb, int mid, int ub, int *b)
 	for (i = lb; i <= ub; i++)
 		array[i] = b[i];
 
-	print_merge(array, lb, mid, ub);
+	print_merge("Done", array, lb, ub);
 }
 
 /**
