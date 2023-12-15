@@ -22,7 +22,7 @@ void swap(int *array, int a, int b)
  * @up: upper bound of the array
  * Return: Nothing
  */
-int lomuto(int *array, int low, int up)
+int lomuto(int *array, int low, int up, size_t size)
 {
 	int pivot = array[up], i, j = low;
 
@@ -32,9 +32,12 @@ int lomuto(int *array, int low, int up)
 		{
 			swap(array, i, j);
 			j++;
+			if (j < i)
+				print_array(array, size);
 		}
 	}
 	swap(array, up, j);
+	print_array(array, size);
 	return (j);
 }
 
@@ -52,10 +55,9 @@ void sorting(int *array, int low, int up, size_t size)
 
 	if (low >= up || low < 0)
 		return;
-	p = lomuto(array, low, up);
+	p = lomuto(array, low, up, size);
 	sorting(array, low, p - 1, size);
 	sorting(array, p + 1, up, size);
-	print_array(array, size);
 }
 
 /**
