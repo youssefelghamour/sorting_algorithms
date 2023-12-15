@@ -20,6 +20,7 @@ void swap(int *array, int a, int b)
  * @array: array to be sorted
  * @low: lower bound of the array
  * @up: upper bound of the array
+ * @size: size of the array
  * Return: Nothing
  */
 int lomuto(int *array, int low, int up, size_t size)
