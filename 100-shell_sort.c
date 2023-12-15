@@ -12,10 +12,10 @@ void shell_sort(int *array, size_t size)
 	size_t gap = 1, j;
 	int temp, i;
 
-	while (gap * 3 + 1 < size)
+	while (gap < size)
 		gap = gap * 3 + 1;
 
-	for (gap = 1; gap > 0; gap = (gap - 1) / 3)
+	for (gap = (gap - 1) / 3; gap > 0; gap = (gap - 1) / 3)
 	{
 		for (j = gap; j < size; j++)
 		{
