@@ -25,11 +25,11 @@ void swap(int *array, int a, int b)
  */
 int lomuto(int *array, int low, int up, size_t size)
 {
-	int pivot = array[up], i, j = low;
+	int *pivot = array + up, i, j = low;
 
 	for (i = low; i < up; i++)
 	{
-		if (array[i] <= pivot)
+		if (array[i] <= *pivot)
 		{
 			swap(array, i, j);
 			j++;
@@ -54,11 +54,12 @@ void sorting(int *array, int low, int up, size_t size)
 {
 	int p;
 
-	if (low >= up || low < 0)
-		return;
-	p = lomuto(array, low, up, size);
-	sorting(array, low, p - 1, size);
-	sorting(array, p + 1, up, size);
+	if (up - low > 0)
+	{
+		p = lomuto(array, low, up, size);
+		sorting(array, low, p - 1, size);
+		sorting(array, p + 1, up, size);
+	}
 }
 
 /**
@@ -69,7 +70,7 @@ void sorting(int *array, int low, int up, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	if (size < 2)
+	if (size < 2 || array == NULL)
 		return;
 	sorting(array, 0, size - 1, size);
 }
