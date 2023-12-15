@@ -7,13 +7,13 @@
  * @b: second element
  * Return: Nothing
  */
-void swap(int *array, int a, int b)
+void swap(int *a, int *b)
 {
 	int temp;
 
-	temp = array[a];
-	array[a] = array[b];
-	array[b] = temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
 /**
  * lomuto - uses lomuto partition scheme to divide the array
@@ -31,13 +31,13 @@ int lomuto(int *array, int low, int up, size_t size)
 	{
 		if (array[i] <= *pivot)
 		{
-			swap(array, i, j);
+			swap(array + i, array + j);
 			j++;
 			if (j < i)
 				print_array(array, size);
 		}
 	}
-	swap(array, up, j);
+	swap(array + up, array + j);
 	print_array(array, size);
 	return (j);
 }
