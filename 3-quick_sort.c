@@ -29,16 +29,21 @@ int lomuto(int *array, int low, int up, size_t size)
 
 	for (i = low; i < up; i++)
 	{
-		if (array[i] <= *pivot)
+		if (array[i] < *pivot)
 		{
-			swap(array + i, array + j);
-			j++;
 			if (j < i)
+			{
+				swap(array + i, array + j);
 				print_array(array, size);
+			}
+			j++;
 		}
 	}
-	swap(array + up, array + j);
-	print_array(array, size);
+	if (array[j] > *pivot)
+	{
+		swap(array + up, array + j);
+		print_array(array, size);
+	}
 	return (j);
 }
 
