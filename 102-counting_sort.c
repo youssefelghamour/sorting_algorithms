@@ -23,8 +23,7 @@ void counting_sort(int *array, size_t size)
 	index = malloc(sizeof(int) * (max + 1));
 	if (!index)
 		return;
-	for (i = 0; (int) i <= max; i++)
-		index[i] = 0;
+
 	for (i = 0; i < size; i++)
 		index[array[i]]++;
 	for (i = 0; (int)i <= max; i++)
