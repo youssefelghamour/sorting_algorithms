@@ -13,7 +13,7 @@ void counting_sort(int *array, size_t size)
 	int max = array[0];
 	size_t i;
 
-	if (!array)
+	if (size < 2)
 		return;
 	for (i = 1; i < size; i++)
 	{
