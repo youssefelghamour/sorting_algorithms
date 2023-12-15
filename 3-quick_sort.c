@@ -59,12 +59,11 @@ void sorting(int *array, int low, int up, size_t size)
 {
 	int p;
 
-	if (up - low > 0)
-	{
-		p = lomuto(array, low, up, size);
-		sorting(array, low, p - 1, size);
-		sorting(array, p + 1, up, size);
-	}
+	if (low >= up || low < 0)
+		return;
+	p = lomuto(array, low, up, size);
+	sorting(array, low, p - 1, size);
+	sorting(array, p + 1, up, size);
 }
 
 /**
