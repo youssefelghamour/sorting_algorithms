@@ -15,30 +15,28 @@ void counting_sort(int *array, size_t size)
 
 	if (!array)
 		return;
-
 	for (i = 1; i < size; i++)
 	{
 		if (array[i] >= max)
 			max = array[i];
 	}
-
 	index = malloc(sizeof(int) * (max + 1));
 	if (!index)
 		return;
-
+	for (i = 0; i <= n; i++)
+		index[i] = 0;
 	for (i = 0; i < size; i++)
 		index[array[i]]++;
 	for (i = 0; (int)i <= max; i++)
 		index[i] = index[i] + index[i - 1];
 
 	print_array(index, max + 1);
-	places = malloc(sizeof(int) * (size + 1));
+	places = malloc(sizeof(int) * size);
 	if (!places)
 	{
 		free(index);
 		return;
 	}
-
 	for (i = 0; i < size; i++)
 	{
 		places[index[array[i]] - 1] = array[i];
