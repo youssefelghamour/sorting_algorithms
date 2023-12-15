@@ -38,11 +38,8 @@ int lomuto(int *array, int low, int up, size_t size)
 			j++;
 		}
 	}
-	if (array[j] > *pivot)
-	{
-		swap(array + up, array + j);
-		print_array(array, size);
-	}
+	swap(array + up, array + j);
+	print_array(array, size);
 	return (j);
 }
 
