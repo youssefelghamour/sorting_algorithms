@@ -2,18 +2,17 @@
 
 /**
  * swap -  swap two elements of the array
- * @array: array to swap its elements
- * @a: first element
- * @b: second element
+ * @x: first element
+ * @y: second element
  * Return: Nothing
  */
-void swap(int *a, int *b)
+void swap(int *x, int *y)
 {
 	int temp;
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
+	temp = *x;
+	*x = *y;
+	*y = temp;
 }
 /**
  * lomuto - uses lomuto partition scheme to divide the array
