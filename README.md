@@ -22,5 +22,7 @@ All programs are written in C:
 | `3-quick_sort.c` | Sorts an array using **Quick sort** |
 | `3-O` | Big O Notations for Quick sort (best, average, worst cases) |
 | `100-shell_sort.c` | Sorts an array using **Shell sort** with Knuth sequence |
+| `102-counting_sort.c` | Sorts an array using **Counting sort**                      |
+| `102-O` | Big O Notations for Counting sort (best, average, worst cases)|
 | `103-merge_sort.c` | Sorts an array using **Merge sort** |
 | `103-O` | Big O Notations for Merge sort (best, average, worst cases) |

@@ -10,13 +10,14 @@
 void counting_sort(int *array, size_t size)
 {
 	int *index, *places;
-	int i;
+	int max;
+	size_t i;
 
 	places = malloc(sizeof(int) * size);
 	if (!places)
 		return;
 
-	int max = array[0];
+	max = array[0];
 	for (i = 1; i < size; i++)
 	{
 		if (array[i] >= max)
@@ -30,7 +31,7 @@ void counting_sort(int *array, size_t size)
 	for (i = 0; i < size; i++)
 		index[array[i]]++;
 
-	for (i = 0; i <= max; i++)
+	for (i = 0; (int)i <= max; i++)
 		index[i] = index[i] + index[i - 1];
 
 	print_array(index, max + 1);
