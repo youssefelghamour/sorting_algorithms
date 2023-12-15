@@ -1,6 +1,6 @@
 # 0x1B. C - Sorting algorithms & Big O
 
-This repository contains the collaborative work of a group project undertaken by two students, Mahmoud Hammam and Youssef El Ghamour, as part of the ALX Software Engineering program. The project focuses on implementing various sorting algorithms and understanding their time complexities, emphasizing hands-on learning and practical application of the concepts taught in the program.
+This repository contains the collaborative work of a group project undertaken by two students, Mahmoud Hammam and Youssef El Ghamour, as part of the ALX Software Engineering program. The project focuses on implementing various sorting algorithms and understanding their time complexities.
 
 ## Objectives
 - Implementing different sorting algorithms
