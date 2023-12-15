@@ -13,8 +13,7 @@ void counting_sort(int *array, size_t size)
 	int max;
 	size_t i;
 
-	places = malloc(sizeof(int) * size);
-	if (!places)
+	if (!array)
 		return;
 
 	max = array[0];
@@ -35,6 +34,13 @@ void counting_sort(int *array, size_t size)
 		index[i] = index[i] + index[i - 1];
 
 	print_array(index, max + 1);
+
+	places = malloc(sizeof(int) * size);
+	if (!places)
+	{
+		free(index);
+		return;
+	}
 
 	for (i = 0; i < size; i++)
 	{
