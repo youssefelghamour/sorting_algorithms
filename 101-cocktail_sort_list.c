@@ -7,7 +7,7 @@
  * @list: pointer to head of the list
  * Return Nothing
  */
-void swap(listint_t *x, listint_t *temp, listint_t **list)
+void swap(listint_t *x, listint_t *temp, listint_t *list)
 {
 	if (temp->next != NULL)
 		temp->next->prev = x;
@@ -19,8 +19,8 @@ void swap(listint_t *x, listint_t *temp, listint_t **list)
 	temp->prev = x->prev;
 	x->prev = temp;
 	temp->next = x;
-	while ((*list)->prev)
-		*list = (*list)->prev;
+	while (list->prev)
+		list = list->prev;
 }
 
 /**
