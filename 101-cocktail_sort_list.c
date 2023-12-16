@@ -37,7 +37,7 @@ void cocktail_sort_list(listint_t **list)
 	{
 		swapped = 0;
 		forw = back = start;
-		while (forw->next)
+		while (forw && forw->next)
 		{
 			if (forw->n > forw->next->n)
 			{
