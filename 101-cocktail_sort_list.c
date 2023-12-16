@@ -7,7 +7,7 @@
  * @list: pointer to head of the list
  * Return Nothing
  */
-void swap(listint_t *x, listint_t *temp, listint_t *list)
+void swap(listint_t *x, listint_t *temp, listint_t **list)
 {
 	if (temp->next != NULL)
 		temp->next->prev = x;
@@ -19,8 +19,8 @@ void swap(listint_t *x, listint_t *temp, listint_t *list)
 	temp->prev = x->prev;
 	x->prev = temp;
 	temp->next = x;
-	while (list->prev)
-		list = list->prev;
+	while ((*list)->prev)
+		*list = (*list)->prev;
 }
 
 /**
@@ -31,33 +31,38 @@ void swap(listint_t *x, listint_t *temp, listint_t *list)
 void cocktail_sort_list(listint_t **list)
 {
 	int swapped = 1;
-	listint_t *ptr;
-	
-	if (list == NULL || *list == NULL)
+	listint_t *start = *list, *temp, *forw, *back;
+
+	if (*list == NULL || (*list)->next == NULL)
 		return;
 	while (swapped)
 	{
 		swapped = 0;
-		for (ptr = *list; ptr->next != NULL; ptr = ptr->next)
+		forw = back = start;
+		while (forw->next)
 		{
-			if (ptr->n > ptr->next->n)
+			if (forw->n > forw->next->n)
 			{
-				swap(ptr, ptr->next, *list);
+				temp = forw->next;
+				swap(forw, temp, list);
 				swapped = 1;
+				forw = temp->prev;
 				print_list(*list);
 			}
+			forw = forw->next;
 		}
-		if (!swapped)
-			break;
 		swapped = 0;
-		for ( ; ptr->prev != NULL; ptr = ptr->prev)
+		back = forw->prev;
+		while (back)
 		{
-			if (ptr->n < ptr->prev->n)
+			if (back->n > back->next->n)
 			{
-				swap(ptr->prev, ptr, *list);
+				temp = back->next;
+				swap(back, temp, list);
 				swapped = 1;
 				print_list(*list);
 			}
+			back = back->prev;
 		}
 	}
 }
