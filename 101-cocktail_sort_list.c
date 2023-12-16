@@ -13,6 +13,8 @@ void swap(listint_t *x, listint_t *temp, listint_t **list)
 		temp->next->prev = x;
 	if (x->prev != NULL)
 		x->prev->next = temp;
+	else
+		*list = temp;
 	x->next = temp->next;
 	temp->prev = x->prev;
 	x->prev = temp;
