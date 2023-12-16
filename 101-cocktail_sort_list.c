@@ -45,7 +45,6 @@ void cocktail_sort_list(listint_t **list)
 			{
 				temp = forw->next;
 				swap(forw, temp, list);
-				forw = temp->prev;
 				swapped = 1;
 				print_list(*list);
 			}
