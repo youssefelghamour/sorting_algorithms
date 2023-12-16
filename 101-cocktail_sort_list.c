@@ -51,6 +51,8 @@ void cocktail_sort_list(listint_t **list)
 			}
 			forw = forw->next;
 		}
+		if (!swapped)
+			break;
 		swapped = 0;
 		while (back->next)
 			back = back->next;
