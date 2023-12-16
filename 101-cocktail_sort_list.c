@@ -31,40 +31,33 @@ void swap(listint_t *x, listint_t *temp, listint_t **list)
 void cocktail_sort_list(listint_t **list)
 {
 	int swapped = 1;
-	listint_t *start = *list, *temp, *forw, *back;
+	listint_t *ptr;
 
-	if (*list == NULL || (*list)->next == NULL)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 	while (swapped)
 	{
 		swapped = 0;
-		forw = back = start;
-		while (forw->next)
+		for (ptr = *list; ptr->next != NULL; ptr = current->next)
 		{
-			if (forw->n > forw->next->n)
+			if (ptr->n > ptr->next->n)
 			{
-				temp = forw->next;
-				swap(forw, temp, list);
+				swap(list, ptr, ptr->next);
 				swapped = 1;
-				forw = temp->prev;
 				print_list(*list);
 			}
-			forw = forw->next;
 		}
 		if (!swapped)
 			break;
 		swapped = 0;
-		back = forw->prev;
-		while (back->prev)
+		for ( ; ptr->prev != NULL; ptr = ptr->prev)
 		{
-			if (back->n > back->next->n)
+			if (ptr->n < ptr->prev->n)
 			{
-				temp = back->next;
-				swap(back, temp, list);
+				swap(list, ptr->prev, ptr);
 				swapped = 1;
 				print_list(*list);
 			}
-			back = back->prev;
 		}
 	}
 }
