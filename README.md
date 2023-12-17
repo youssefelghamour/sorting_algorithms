@@ -28,3 +28,5 @@ All programs are written in C:
 | `102-O` | Big O Notations for Counting sort (best, average, worst cases)|
 | `103-merge_sort.c` | Sorts an array using **Merge sort** |
 | `103-O` | Big O Notations for Merge sort (best, average, worst cases) |
+| `104-heap_sort.c` | Sorts an array using **Heap sort** (sift-down algorithm) |
+| `104-O` | Big O Notations for Heap sort (best, average, worst cases) |
