@@ -65,8 +65,7 @@ void count_sort(int *array, size_t size, int pos)
  */
 void radix_sort(int *array, size_t size)
 {
-	int max;
-	size_t pos;
+	int max, pos;
 
 	max = getMax(array, size);
 
