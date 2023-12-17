@@ -28,15 +28,10 @@ int getMax(int *array, size_t size)
  * @size: size of the array
  * @pos: the current digit being considered
  */
-void count_sort(int *array, size_t size, int pos)
+void count_sort(int *array, size_t size, int pos, int *b)
 {
-	int *b;
 	int count[10] = {0};
 	size_t i;
-
-	b = malloc(size * sizeof(int));
-	if (!b)
-		return;
 
 	for (i = 0; i < size; i++)
 		count[(array[i] / pos) % 10]++;
@@ -52,8 +47,6 @@ void count_sort(int *array, size_t size, int pos)
 
 	for (i = 0; i < size; i++)
 		array[i] = b[i];
-
-	free(b);
 }
 
 /**
@@ -65,15 +58,24 @@ void count_sort(int *array, size_t size, int pos)
  */
 void radix_sort(int *array, size_t size)
 {
-	int max = getMax(array, size);
+	int max;
 	size_t pos;
+	int *b;
+
+	max = getMax(array, size);
+
+	b = malloc(size * sizeof(int));
+	if (!b)
+		return;
 
 	if (!array || size < 2)
 		return;
 
 	for (pos = 1; max / pos > 0; pos *= 10)
 	{
-		count_sort(array, size, pos);
+		count_sort(array, size, pos, b);
 		print_array(array, size);
 	}
+
+	free(b);
 }
