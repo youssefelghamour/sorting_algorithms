@@ -30,3 +30,5 @@ All programs are written in C:
 | `103-O` | Big O Notations for Merge sort (best, average, worst cases) |
 | `104-heap_sort.c` | Sorts an array using **Heap sort** (sift-down algorithm) |
 | `104-O` | Big O Notations for Heap sort (best, average, worst cases) |
+| `105-radix_sort.c`         | Sorts an array using **Radix sort** (LSD radix sort algorithm)  |
+| `105-O`                    | Big O Notations for Radix sort (best, average, worst cases)     |
