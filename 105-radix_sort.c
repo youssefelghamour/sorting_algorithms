@@ -22,13 +22,13 @@ int getMax(int *array, size_t size)
 }
 
 /**
- * countSort - performs counting sort on a specified digit
+ * count_sort - performs counting sort on a specified digit
  *
  * @array: array to sort
  * @size: size of the array
  * @pos: the current digit being considered
  */
-void countSort(int *array, size_t size, int pos)
+void count_sort(int *array, size_t size, int pos)
 {
 	int *b;
 	int count[10] = {0};
@@ -73,5 +73,5 @@ void radix_sort(int *array, size_t size)
 		return;
 
 	for (pos = 1; max / pos > 0; pos *= 10)
-		countSort(array, size, pos);
+		count_sort(array, size, pos);
 }
