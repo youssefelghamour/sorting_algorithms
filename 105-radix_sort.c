@@ -73,7 +73,7 @@ void radix_sort(int *array, size_t size)
 	if (!array || size < 2)
 		return;
 
-	for (pos = 1; max / pos > 0; pos *= 10)
+	for (pos = 1; (max / pos) > 0; pos *= 10)
 	{
 		count_sort(array, size, pos);
 		print_array(array, size);
