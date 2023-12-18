@@ -1,5 +1,21 @@
 #include "sort.h"
 
+/**
+ * swap -  swap two elements of the array
+ * @array: array to swap its elements
+ * @x: first element
+ * @y: second element
+ * Return: Nothing
+ */
+void swap(int *array, int x, int y)
+{
+	int temp;
+
+	temp = array[x];
+	array[x] = array[y];
+	array[y] = temp;
+}
+
 void bitonic_merge(int *array, int low_idx, int count, int dir, size_t size)
 {
 	int k, i;

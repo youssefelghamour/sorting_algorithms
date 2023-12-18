@@ -1,6 +1,22 @@
 #include "sort.h"
 
 /**
+ * swap -  swap two elements of the array
+ * @array: array to swap its elements
+ * @x: first element
+ * @y: second element
+ * Return: Nothing
+ */
+void swap(int *array, int x, int y)
+{
+	int temp;
+
+	temp = array[x];
+	array[x] = array[y];
+	array[y] = temp;
+}
+
+/**
  * lomuto - uses lomuto partition scheme to divide the array
  * @array: array to be sorted
  * @low: lower bound of the array
