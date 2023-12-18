@@ -1,22 +1,6 @@
 #include "sort.h"
 
 /**
- * swap -  swap two elements of the array
- * @array: array to swap its elements
- * @x: first element
- * @y: second element
- * Return: Nothing
- */
-void swap(int *array, int x, int y)
-{
-	int temp;
-
-	temp = array[x];
-	array[x] = array[y];
-	array[y] = temp;
-}
-
-/**
  * heapify - compare child nodes with parent node in the max heap
  * @array: original array
  * @n: part of the heap with nodes to compare
