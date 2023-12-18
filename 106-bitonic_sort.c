@@ -16,6 +16,15 @@ void swap(int *array, int x, int y)
 	array[y] = temp;
 }
 
+/**
+ * bitonic_merge - merge two sub arrays after sorting
+ * @array: array to be sorted
+ * @low_idx: first index of array/sub array
+ * @count: number of elements to be checked in base case
+ * @dir: direction of sorting
+ * @size: size of array
+ * Return: Nothing
+ */
 void bitonic_merge(int *array, int low_idx, int count, int dir, size_t size)
 {
 	int k, i;
@@ -35,6 +44,15 @@ void bitonic_merge(int *array, int low_idx, int count, int dir, size_t size)
 	}
 }
 
+/**
+ * sort - divide the array into two sub arrays
+ * @array: array to be sorted
+ * @low_idx: first index of array/sub array
+ * @count: number of elements to be checked in base case
+ * @dir: direction of sorting
+ * @size: size of array
+ * Return: Nothing
+ */
 void sort(int *array, int low_idx, int count, int dir, size_t size)
 {
 	int k;
@@ -57,6 +75,12 @@ void sort(int *array, int low_idx, int count, int dir, size_t size)
 	}
 }
 
+/**
+ * bitonic_sort - sorts an array of integers using the Bitonic sort algorithm
+ * @array: array to be sorted
+ * @size: size of the array
+ * Return: Nothing
+ */
 void bitonic_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
