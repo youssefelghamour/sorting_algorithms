@@ -41,5 +41,6 @@ void quick_sort_hoare(int *array, size_t size);
 /* are */
 /* strategically */
 /* added */
+/* in */
 
 #endif
