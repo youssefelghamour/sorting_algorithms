@@ -32,3 +32,7 @@ All programs are written in C:
 | `104-O`                    | Big O Notations for Heap sort (best, average, worst cases)            |
 | `105-radix_sort.c`         | Sorts an array using **Radix sort** (LSD radix sort algorithm)        |
 | `105-O`                    | Big O Notations for Radix sort (best, average, worst cases)           |
+| `106-bitonic_sort.c`       | Sorts an array using **Bitonic sort**                                 |
+| `106-O`                    | Big O Notations for Bitonic sort (best, average, worst cases)         |
+| `107-quick_sort_hoare.c`   | Sorts an array using **Quick sort** with Hoare partition scheme       |
+| `107-O`                    | Big O Notations for Quick sort (best, average, worst cases)           |
