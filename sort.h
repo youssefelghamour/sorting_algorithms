@@ -50,5 +50,6 @@ void quick_sort_hoare(int *array, size_t size);
 /* conform */
 /* to */
 /* the */
+/* rule */
 
 #endif
