@@ -62,5 +62,6 @@ void quick_sort_hoare(int *array, size_t size);
 /* commits, */
 /* to */
 /* meet */
+/* the */
 
 #endif
