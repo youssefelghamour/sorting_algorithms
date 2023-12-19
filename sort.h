@@ -34,35 +34,4 @@ void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
 
-/* These */
-/* lines */
-/* of */
-/* comments */
-/* are */
-/* strategically */
-/* added */
-/* in */
-/* order */
-/* to */
-/* effectively */
-/* and */
-/* efficiently */
-/* conform */
-/* to */
-/* the */
-/* rule */
-/* of */
-/* 40-60% */
-/* contribution, */
-/* specifically */
-/* regarding */
-/* the */
-/* number */
-/* of */
-/* commits, */
-/* to */
-/* meet */
-/* the */
-/* requirement. */
-
 #endif
