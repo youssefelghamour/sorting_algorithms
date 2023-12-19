@@ -52,5 +52,6 @@ void quick_sort_hoare(int *array, size_t size);
 /* the */
 /* rule */
 /* of */
+/* 40-60% */
 
 #endif
