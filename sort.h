@@ -43,5 +43,6 @@ void quick_sort_hoare(int *array, size_t size);
 /* added */
 /* in */
 /* order */
+/* to */
 
 #endif
