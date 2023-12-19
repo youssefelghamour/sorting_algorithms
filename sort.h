@@ -38,5 +38,6 @@ void quick_sort_hoare(int *array, size_t size);
 /* lines */
 /* of */
 /* comments */
+/* are */
 
 #endif
